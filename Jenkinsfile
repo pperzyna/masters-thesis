@@ -4,7 +4,6 @@ pipeline {
   agent any
   options {
     buildDiscarder(logRotator(numToKeepStr:'3'))
-    ansiColor('gnome-terminal')
   }
   stages {
     stage ('Download') {
