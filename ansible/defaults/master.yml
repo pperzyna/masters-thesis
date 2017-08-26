@@ -1,4 +1,4 @@
-apache_listen_port: 8080
+apache_listen_port: 80
 apache_vhosts:
   - {servername: "ec2-34-225-244-19.compute-1.amazonaws.com", documentroot: "/var/www/vhosts/ec2-34-225-244-19.compute-1.amazonaws.com/"}
 
@@ -8,10 +8,7 @@ php_upload_max_filesize: "256M"
 php_packages:
   - php7.0
   - php7.0-mbstring
-  - php7.0-mcrypt
   - php7.0-curl
   - php7.0-gd
-  - php7.0-iconv
-  - php7.0-mbstring
 php_packages_extra:
   - libapache2-mod-php7.1
