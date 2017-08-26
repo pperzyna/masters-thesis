@@ -13,4 +13,4 @@
   roles:
    - common
 
-- include: "playbooks/{{ env }}.yml"
+- include: "{{ env }}.yml"
