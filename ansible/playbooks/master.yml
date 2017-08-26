@@ -2,5 +2,5 @@
   vars:
   
   roles:
-   - { role: ../apache }
-   - { role: ../php }
+   - { role: ../roles/apache }
+   - { role: ../roles/php }
