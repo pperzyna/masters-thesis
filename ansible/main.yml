@@ -10,8 +10,8 @@
   - name: Gathering Facts
     setup:
 
-  include_vars:
-    file: "defaults/{{ env }}.yml"
+  vars_files:
+    - "defaults/{{ env }}.yml"
   
   roles:
    - common
