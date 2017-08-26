@@ -9,6 +9,8 @@ php_packages:
   - php7.0
   - php7.0-mbstring
   - php7.0-curl
+  - php7.0-json
   - php7.0-gd
+  - php7.0-mysql
 php_packages_extra:
-  - libapache2-mod-php7.1
+  - libapache2-mod-php7.0
