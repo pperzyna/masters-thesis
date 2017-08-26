@@ -1,6 +1,7 @@
 // -*- mode: groovy -*-
 pipeline {
   agent any
+  properties([pipelineTriggers([githubPush()])])  
   stages {
     stage ('Download') {
       steps {
