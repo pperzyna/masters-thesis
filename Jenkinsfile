@@ -9,17 +9,19 @@ pipeline {
     }
     stage ('Install') {
       steps {
-         echo "Install"
+        echo "Install"
       }
     }
     stage ('Test') {
       steps {
-         echo "Test"
+        echo "Test"
       }
     }
     stage ('Deploy') {
       steps {
-         echo "Deploy."
+        sshagent(['jenkins']) {
+          sh 'ansible-playbook -i ansible/hosts ansible/deploy.yml -e env=' + env.BRANCH_NAME
+        }
       }
     }
   }
