@@ -1,0 +1,14 @@
+- name: Ensure directory exists
+  file:
+    path: "{{ wp_path }}"
+    state: directory
+
+- name: Upload code
+  synchronize:
+    src: "../../../../wp/"
+    dest: "{{ wp_path }}"
+    archive: yes
+    checksum: yes
+    rsync_path: "sudo rsync"
+    rsync_opts:
+      - "--exclude=.git*"

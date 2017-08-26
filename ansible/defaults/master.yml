@@ -1,8 +1,8 @@
-laravel_path: "/var/www/laravel"
+wp_path: "/var/www/wp"
 
 apache_listen_port: 80
 apache_vhosts:
-  - {servername: "ec2-34-225-244-19.compute-1.amazonaws.com", documentroot: "/var/www/laravel/public", }
+  - {servername: "ec2-34-225-244-19.compute-1.amazonaws.com", documentroot: "/var/www/wp/", }
 
 php_memory_limit: "128M"
 php_max_execution_time: "90"
