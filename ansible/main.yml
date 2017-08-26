@@ -17,4 +17,5 @@
    - common
    - apache
    - php
-   - laravel
+   - mysql
+   - wp
