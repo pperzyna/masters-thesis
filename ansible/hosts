@@ -1,4 +1,4 @@
 [master]
-34.225.244.19 
+production ansible_ssh_user=ubuntu
 
 [develop]
