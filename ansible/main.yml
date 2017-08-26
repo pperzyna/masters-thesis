@@ -1,8 +1,6 @@
 - hosts: "{{ env }}"
   become: true
   gather_facts: false
-  vars_files:
-    - "defaults/{{ env }}.yml"
     
   pre_tasks:
   - name: Install python2 for Ansible
@@ -14,6 +12,3 @@
 
   roles:
    - common
-  
-  tasks:
-   - include: "{{ env }}.yml"
