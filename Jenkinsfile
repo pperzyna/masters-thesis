@@ -24,9 +24,9 @@ pipeline {
     }
   }
   post {
-    always {
+//    always {
 //      cleanWs()
-    }
+//    }
     failure {
       echo "Failed."
     }
