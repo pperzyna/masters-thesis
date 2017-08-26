@@ -15,4 +15,4 @@
 
 - template:
     src: wp-config.php.j2
-    dest: "{{ wp_path }}"/wp-config.php
+    dest: "{{ wp_path }}/wp-config.php"
