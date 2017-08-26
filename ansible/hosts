@@ -1,7 +1,7 @@
 [master]
 production ansible_ssh_user=ubuntu
 
-[staging]
+[stag]
 staging ansible_ssh_user=ubuntu
 
 [develop]

@@ -1,6 +1,24 @@
 - hosts: "{{ env }}"
   vars:
-  
+    apache_listen_port: 8080
+    apache_vhosts:
+     - {servername: "ec2-34-225-244-19.compute-1.amazonaws.com", documentroot: "/var/www/vhosts/ec2-34-225-244-19.compute-1.amazonaws.com/"}
+
+    php_memory_limit: "128M"
+    php_max_execution_time: "90"
+    php_upload_max_filesize: "256M"
+    php_packages:
+     - php7.1
+     - php7.1-mbstring
+     - php7.1-mcrypt
+     - php7.1-curl
+     - php7.1-gd
+     - php7.1-iconv
+     - php7.1-mbstring
+    php_packages_extra:
+     - libapache2-mod-php7.1
+
+
   roles:
    - { role: ../roles/apache }
    - { role: ../roles/php }
