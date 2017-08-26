@@ -1,5 +1,6 @@
 - hosts: "{{ env }}"
-
+  vars:
+  
   roles:
-   - { role: "../apache" }
-   - { role: "../php" }
+   - { role: ../apache }
+   - { role: ../php }
