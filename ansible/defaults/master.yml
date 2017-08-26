@@ -1,3 +1,5 @@
+laravel_path: "/var/www/vhosts/ec2-34-225-244-19.compute-1.amazonaws.com/"
+
 apache_listen_port: 80
 apache_vhosts:
   - {servername: "ec2-34-225-244-19.compute-1.amazonaws.com", documentroot: "/var/www/vhosts/ec2-34-225-244-19.compute-1.amazonaws.com/"}
