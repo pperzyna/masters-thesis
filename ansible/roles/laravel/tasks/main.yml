@@ -5,7 +5,7 @@
 
 - name: Upload code
   synchronize:
-    src: "../../../../laravel"
+    src: "../../../../laravel/"
     dest: "{{ laravel_path }}"
     archive: yes
     checksum: yes
