@@ -10,7 +10,10 @@
   - name: Gathering Facts
     setup:
 
+  include_vars:
+    file: "defaults/{{ env }}.yml"
+  
   roles:
    - common
-
-- include: "{{ env }}.yml"
+   - apache
+   - php
