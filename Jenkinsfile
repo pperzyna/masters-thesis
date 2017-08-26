@@ -1,5 +1,6 @@
 // -*- mode: groovy -*-
 pipeline {
+  agent any
   stages {
     stage ('Download') {
       steps {
