@@ -21,7 +21,7 @@ pipeline {
     stage ('Deploy') {
       steps {
         sshagent(['jenkins']) {
-          sh 'ansible-playbook -i ansible/hosts ansible/main.yml -e env=' + env.BRANCH_NAME
+          sh 'ansible-playbook -i ansible/hosts ansible/main.yml -e \'host_key_checking=False\'  -e env=' + env.BRANCH_NAME
         }
       }
     }
