@@ -7,7 +7,7 @@ wp_db_prefix: "wp_"
 
 apache_listen_port: 80
 apache_vhosts:
-  - {servername: "ec2-34-225-244-19.compute-1.amazonaws.com", documentroot: "/var/www/wp/", }
+  - {servername: "masterthesis.local", documentroot: "/var/www/wp/", }
 
 php_memory_limit: "128M"
 php_max_execution_time: "90"

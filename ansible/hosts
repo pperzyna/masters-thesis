@@ -1,8 +1,8 @@
 [master]
-production ansible_ssh_user=ubuntu
+production  ansible_ssh_user=ubuntu
 
-[stag]
-staging ansible_ssh_user=ubuntu
+[staging]
+staging     ansible_ssh_user=ubuntu
 
 [develop]
 development ansible_ssh_user=ubuntu

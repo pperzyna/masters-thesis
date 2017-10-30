@@ -10,9 +10,6 @@
   - name: Gathering Facts
     setup:
 
-  vars_files:
-    - "defaults/{{ env }}.yml"
-  
   roles:
    - common
    - apache
