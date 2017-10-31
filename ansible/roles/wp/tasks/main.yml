@@ -1,9 +1,9 @@
-- name: Ensure directory exists
+- name: Ensure WordPress directory exists.
   file:
     path: "{{ path }}"
     state: directory
 
-- name: Upload code
+- name: Upload WordPress code.
   synchronize:
     src: "../../../../wp/"
     dest: "{{ path }}"
@@ -13,6 +13,7 @@
     rsync_opts:
       - "--exclude=.git*"
 
-- template:
+- name: Setup WordPress config.
+  template:
     src: wp-config.php.j2
     dest: "{{ path }}/wp-config.php"
