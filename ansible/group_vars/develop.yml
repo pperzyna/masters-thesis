@@ -1,0 +1,9 @@
+---
+host: "master-thesis.dev"
+path: "/var/www/dev"
+
+db_host: "localhost"
+db_user: "dev"
+db_password: "password"
+db_database: "dev"
+db_prefix: "wp_"

@@ -1,0 +1,9 @@
+---
+host: "master-thesis.stg"
+path: "/var/www/stg"
+
+db_host: "localhost"
+db_user: "stg"
+db_password: "password"
+db_database: "stg"
+db_prefix: "wp_"

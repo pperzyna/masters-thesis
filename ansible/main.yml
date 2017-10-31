@@ -3,16 +3,16 @@
   gather_facts: false
     
   pre_tasks:
-  - name: Install python2 for Ansible
-    raw: bash -c "test -e /usr/bin/python || (apt -qqy update && apt install -qqy python-minimal)"
+  - name: Install python for Ansible.
+    raw: bash -c "test -e /usr/bin/python || (apt -qqy update && apt install -qqy python-minimal && apt install -qqy python-zipstream)"
     register: output
-    changed_when: output.stdout != ""
-  - name: Gathering Facts
+    changed_when: output.stdout == ""
+  - name: Gathering Facts.
     setup:
 
   roles:
-   - common
-   - apache
-   - php
-   - mysql
-   - wp
+   - { role: common, tags: [ 'provisioning' ] }
+   - { role: apache, tags: [ 'provisioning' ] }
+   - { role: php,    tags: [ 'provisioning' ] }
+   - { role: mysql,  tags: [ 'provisioning' ] }
+   - { role: wp,     tags: [ 'provisioning', 'deploy' ] }

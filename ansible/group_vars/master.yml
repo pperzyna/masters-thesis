@@ -1,0 +1,9 @@
+---
+host: "master-thesis.prd"
+path: "/var/www/prd"
+
+db_host: "localhost"
+db_user: "prd"
+db_password: "password"
+db_database: "prd"
+db_prefix: "wp_"

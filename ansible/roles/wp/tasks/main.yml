@@ -1,12 +1,12 @@
 - name: Ensure directory exists
   file:
-    path: "{{ wp_path }}"
+    path: "{{ path }}"
     state: directory
 
 - name: Upload code
   synchronize:
     src: "../../../../wp/"
-    dest: "{{ wp_path }}"
+    dest: "{{ path }}"
     archive: yes
     checksum: yes
     rsync_path: "sudo rsync"
@@ -15,4 +15,4 @@
 
 - template:
     src: wp-config.php.j2
-    dest: "{{ wp_path }}/wp-config.php"
+    dest: "{{ path }}/wp-config.php"

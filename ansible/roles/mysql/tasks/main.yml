@@ -1,29 +1,30 @@
 ---
-# Variable configuration.
-- include: variables.yml
+- name: Ensure MySQL Python libraries are installed.
+  apt: "name=python-mysqldb state=installed"
 
-# Setup/install tasks.
-- include: setup-RedHat.yml
-  when: ansible_os_family == 'RedHat'
-  static: no
+- name: Ensure MySQL packages are installed.
+  apt: "name={{ item }} state=installed"
+  with_items:
+    - mariadb-server
+    - mariadb-client
 
-- include: setup-Debian.yml
-  when: ansible_os_family == 'Debian'
-  static: no
+- name: Ensure MySQL is started and enabled on boot.
+  service: "name=mysql state=started enabled=yes"
+  register: mysql_service_configuration
 
-- include: setup-Archlinux.yml
-  when: ansible_os_family == 'Archlinux'
-  static: no
+- name: Ensure MySQL databases are present.
+  mysql_db:
+    name: "{{ db_database }}"
+    collation: utf8_general_ci
+    encoding: utf8
+    state: present
 
-- name: Check if MySQL packages were installed.
-  set_fact:
-    mysql_install_packages: "{{ (rh_mysql_install_packages is defined and rh_mysql_install_packages.changed)
-      or (deb_mysql_install_packages is defined and deb_mysql_install_packages.changed)
-      or (arch_mysql_install_packages is defined and arch_mysql_install_packages.changed) }}"
-
-# Configure MySQL.
-- include: configure.yml
-- include: secure-installation.yml
-- include: databases.yml
-- include: users.yml
-- include: replication.yml
+- name: Ensure MySQL users are present.
+  mysql_user:
+    name: "{{ db_user }}"
+    host: "%"
+    password: "{{ db_password }}"
+    priv: "*.*:ALL"
+    state: present
+    append_privs: no
+    encrypted: no
